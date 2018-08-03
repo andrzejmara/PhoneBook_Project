@@ -1,0 +1,29 @@
+﻿@model PhoneBook.Models.PersonModel
+    <div class="jumbotron container">
+        <table class="table">
+            <tr class="thead-dark">
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+            <tr>
+                <td>@Model.ID</td>
+                <td>@Model.FirstName</td>
+                <td>@Model.LastName</td>
+                <td>@Model.Phone</td>
+                <td>@Model.Email</td>
+                <td>@Model.Created</td>
+                <td>@Model.Updated</td>
+            </tr>
+        </table>
+    </div>
+
+    <form asp-action="RemoveConfirm" asp-route-id="@Model.ID" type="post">
+        <p>Do you want to remove this entry?</p>
+        <input class="btn btn-success" type="submit" value="Yes">
+        <input class="btn btn-danger" type="submit" value="No" formaction="/Person/Index">
+    </form>

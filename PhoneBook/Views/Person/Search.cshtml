@@ -1,0 +1,27 @@
+﻿@model List<PhoneBook.Models.PersonModel>
+    <div class="jumbotron">
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td>@person.ID</td>
+                    <td>@person.FirstName</td>
+                    <td>@person.LastName</td>
+                    <td>@person.Phone</td>
+                    <td>@person.Email</td>
+                    <td>@person.Created</td>
+                    <td>@person.Updated</td>
+                </tr>
+            }
+        </table>
+    </div>

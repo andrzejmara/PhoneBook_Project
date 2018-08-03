@@ -1,0 +1,53 @@
+﻿@model PhoneBook.Models.PersonModel
+    <div class="jumbotron>
+        <table class="table">
+            <tr class="thead-dark">
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+            <tr>
+                <td>@Model.ID</td>
+                <td>@Model.FirstName</td>
+                <td>@Model.LastName</td>
+                <td>@Model.Phone</td>
+                <td>@Model.Email</td>
+                <td>@Model.Created</td>
+                <td>@Model.Updated</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <form asp-action="Edit" method="post">
+
+        <div>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+
+        <div>
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" />
+            <span asp-validation-for="Phone"></span>
+        </div>
+
+        <div>
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <input type="submit" value="Edit" />
+
+    </form>
